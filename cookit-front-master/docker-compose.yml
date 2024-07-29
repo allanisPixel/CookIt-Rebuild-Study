@@ -1,0 +1,13 @@
+version: '3'
+services:
+  cookit_front_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cookit_front_app
+    restart: always
+    #volumes:
+    #  - '.:/app'
+    #  - '/app/node_modules'
+    ports:
+      - '80:80'
