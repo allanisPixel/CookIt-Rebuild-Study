@@ -10,10 +10,8 @@ WORKDIR /srv/app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
-RUN ls
-
+COPY . /srv/app/
 RUN python manage.py collectstatic --no-input
-RUN python manage.py runserver 0.0.0.0:8000
+RUN python manage.py runserver 0.0.0.0:8080
 
-# PRECISA DE UM CONTAINER EXCLUSIVO PARA O BANCO DE DADOS '-_- OU ISSO NUNCA VAI RODAR
+#RUN python manage.py collectstatic --no-input

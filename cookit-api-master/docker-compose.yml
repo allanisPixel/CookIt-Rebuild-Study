@@ -1,9 +1,29 @@
 #https://devops.ifrn.edu.br/2018/08/16/crie-seu-micro-servico/
+
+#version: "3.3"
+   
+#services:
+#  db-cookit:
+#    image: postgres:13
+#    restart: always
+#    tty: true
+#    environment:
+#      POSTGRES_DB: cookit
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: postgres
+#    volumes:
+#      - postgresdatabase:/var/lib/postgresql/data
+#    ports:
+#      - '5432:5432'
+#    networks:
+#      - app-network
+
+
 version: "3.3"
    
 services:
   db-cookit:
-    image: postgres:13
+    image: sqlite
     restart: always
     tty: true
     environment:
@@ -32,8 +52,8 @@ services:
     networks:
       - app-network
 
-volumes:
-  postgresdatabase:
+#volumes:
+#  postgresdatabase:
 
 #Docker Networks
 networks:
